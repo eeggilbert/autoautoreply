@@ -21,14 +21,15 @@ my_cell = "YOUR ACTUAL NUMBER"
 # names and pronouns
 first_name = "YOUR FIRST NAME"
 full_name = "YOUR FULL NAME"
-pronoun = "her/his/their..."
+pronoun1 = "her/his/their..."
+pronoun2 = "she/he/they..."
 
 # tolerance for unread mail; auto-replies are sent after unread count crosses this number
 TOLERANCE = 40
 
-auto_msg =  first_name + " is not actively reading " + pronoun + " email, as " + pronoun
+auto_msg =  first_name + " is not actively reading " + pronoun1 + " email, as " + pronoun1
 auto_msg += " unread message count has crossed a pre-set threshold. This could be "
-auto_msg += "because he's traveling, or approaching a deadline. "
+auto_msg += "because " + pronoun2 + " traveling, or approaching a deadline. "
 auto_msg += "This script turns on when that happens [1]."
 auto_msg += "\n\n"
 auto_msg += "If you need to get in touch, one of the following two options is best: "
@@ -38,7 +39,7 @@ auto_msg += "some other channel, you are more likely to reach " + first_name + "
 auto_msg += "\n\n"
 auto_msg += "2. Compose a text in reply to this message. Alternatively, you can "
 auto_msg += "reply to this message with fewer than 140 characters (above the quoted reply), "
-auto_msg += "and I will send it via text to " + pronoun + " cell."
+auto_msg += "and I will send it via text to " + pronoun1 + " cell."
 auto_msg += "\n\n"
 auto_msg += "thanks,\nauto-auto reply bot"
 auto_msg += "\n\n"
@@ -85,7 +86,6 @@ def monitor_new_email():
                         print('sent reply to msg id #%d: "%s" received %s' % (msgid, subject, envelope.date))
                         client.add_flags(msgid, ['AAREPLIED'])
 
-# from https://gist.github.com/shreyansb/1622514
 def mail(to, subject, text, cc=None, bcc=None, reply_to=None, attach=None,
          html=None, pre=False, custom_headers=None):
     msg = MIMEMultipart()
