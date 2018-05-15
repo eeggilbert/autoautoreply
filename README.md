@@ -1,14 +1,16 @@
 # auto-auto reply
-Auto-auto reply is an email utility that automatically sends an out-of-office message when you have too much unread mail, defined by a tolerance level. In other words, it is a dynamic out-of-office message that responds to your current email load, without you needing to explicitly turn it on and off. It also encourages brevity and channel switching by permitting people to send short email replies (< 140 characters), and have them delivered via text to your phone.
+Auto-auto reply is an email utility that automatically sends an out-of-office message when you have "too much" unread mail, defined by a tolerance level. In other words, it is a dynamic out-of-office message that responds to your current email load, without you needing to explicitly turn it on and off. It also encourages channel switching by permitting people to send short email replies to your oom, and have them delivered via text to your phone.
 
 ## Getting Started
 
 Auto-auto reply accesses a mail server using IMAP. It has been tested against 
-Gmail's IMAP, but to enable the bot to work on Gmail, you will have to enable
-the "Allow less secure apps" option. Other IMAP servers may work as
-well, but they have not at this time been tested.
+Gmail's IMAP, but to enable it to work on Gmail, you will have to enable
+the "Allow less secure apps" Gmail setting. Other IMAP servers may work as
+well, but they have not at this time been tested. (In particular,
+recording state via arbitrary flags may be a problem with some
+implementations.)
 
-Also establish a [Twilio](https://twilio.com) account, from which you will extract its [API access keys](https://www.twilio.com/console).
+Next, establish a [Twilio](https://twilio.com) account, from which you will extract its [API access keys](https://www.twilio.com/console).
 
 ### Prerequisites
 
@@ -22,14 +24,36 @@ pip install twilio
 
 ### Installing
 
+#### Obtaining script 
+
 ``git clone https://github.com/ee-gilbert/autoautoreply.git``
 
-Change lines 12-24 [autoautoreply.py](https://github.com/ee-gilbert/autoautoreply/blob/master/autoautoreply.py) to reflect your servers, tokens, accounts, etc. Update the actual message as well. :-)
+#### Your settings and message 
 
-Auto-auto reply runs as a cron job, which you can run at any frequency,
+Change lines 12-24 [autoautoreply.py](https://github.com/ee-gilbert/autoautoreply/blob/master/autoautoreply.py) to reflect your servers, tokens, accounts, etc. Update the actual message as well. For example: 
+
+```python
+imap_server = "imap.gmail.com" # if gmail
+smtp_server = "smtp.gmail.com" # if gmail
+```
+
+also: 
+
+```python
+TOLERANCE = 40 # 40 is default (number by default not exposed in
+auto-reply)
+```
+
+#### Running
+
+``python autoautoreply.py```
+
+#### Running with cron 
+
+Auto-auto reply was built to run as a cron job, which you can run at any frequency,
 but every 10 minutes is a reasonable default. To run it every 10
 minutes, enter the following line into your crontab on a workstation that can
-access your mailserver:
+access your mail server:
 
 ``*/10 * * * * python autoautoreply.py > auto-auto.log``
 
