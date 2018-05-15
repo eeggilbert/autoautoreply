@@ -1,5 +1,5 @@
 # auto-auto reply
-Auto-auto reply is an email utility that automatically sends an out-of-office message when you have "too much" unread mail, defined by a tolerance level. In other words, it is a dynamic out-of-office message that responds to your current email load, without you needing to explicitly turn it on and off. It also encourages channel switching by permitting people to send short email replies to your oom, and have them delivered via text to your phone.
+Auto-auto reply is an email utility that automatically sends an out-of-office message when you have "too much" unread mail, defined by a tolerance level. In other words, it is a dynamic out-of-office message that responds to your current email load, without you needing to explicitly turn it on and off. It also encourages channel switching by permitting people to send short email replies to your out-of-office message, and have them delivered via text to your phone.
 
 ## Getting Started
 
@@ -40,13 +40,12 @@ smtp_server = "smtp.gmail.com" # if gmail
 also: 
 
 ```python
-TOLERANCE = 40 # 40 is default (number by default not exposed in
-auto-reply)
+TOLERANCE = 40 # 40 is default (number by default not exposed)
 ```
 
 #### Running
 
-``python autoautoreply.py```
+``python autoautoreply.py``
 
 #### Running with cron 
 
