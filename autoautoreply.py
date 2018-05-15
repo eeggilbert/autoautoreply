@@ -43,7 +43,7 @@ auto_msg += "and I will send it via text to " + pronoun1 + " cell."
 auto_msg += "\n\n"
 auto_msg += "thanks,\nauto-auto reply bot"
 auto_msg += "\n\n"
-auto_msg += "[1] https://github.com/ee-gilbert/autoautoreply"
+auto_msg += "[1] https://github.com/eeggilbert/autoautoreply"
 
 def monitor_new_email():
     with IMAPClient(host=imap_server) as client:
