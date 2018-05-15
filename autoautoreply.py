@@ -56,6 +56,7 @@ def monitor_new_email():
             for msgid, data in client.fetch(messages, ['ENVELOPE', 'RFC822']).items():
                 envelope = data[b'ENVELOPE']
                 rfc822 = data[b'RFC822']
+                subject = envelope.subject.decode()
                 sender = envelope.from_[0].mailbox + "@" + envelope.from_[0].host
                 recipients = []
                 if envelope.to:
