@@ -15,15 +15,16 @@ Also establish a [Twilio](https://twilio.com) account, from which you will extra
 Auto-auto reply requires IMAPClient and the Twilio API (to relay text
 responses to your phone after someone responds to your auto-reply). 
 
-``pip install imapclient
-pip install twilio``
+```
+pip install imapclient
+pip install twilio
+```
 
 ### Installing
 
 ``git clone https://github.com/ee-gilbert/autoautoreply.git``
 
-Change lines 12-24 to reflect your servers, tokens, accounts, etc.
-Update the actual message as well. :-)
+Change lines 12-24 [autoautoreply.py](https://github.com/ee-gilbert/autoautoreply/blob/master/autoautoreply.py) to reflect your servers, tokens, accounts, etc. Update the actual message as well. :-)
 
 Auto-auto reply runs as a cron job, which you can run at any frequency,
 but every 10 minutes is a reasonable default. To run it every 10
@@ -38,7 +39,7 @@ Contributions welcome. :-)
 
 ## Authors
 
-* **Eric Gilbert** - [School of Information, University of Michigan](http://eegilbert.org)
+**Eric Gilbert** - [School of Information, University of Michigan](http://eegilbert.org)
 
 ## License
 
