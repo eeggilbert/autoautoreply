@@ -39,7 +39,7 @@ Contributions welcome. :-)
 
 ## Authors
 
-**[Eric Gilbert](http://eegilbert.org)** - School of Information, University of Michigan
+[Eric Gilbert](http://eegilbert.org) - School of Information, University of Michigan
 
 ## License
 
