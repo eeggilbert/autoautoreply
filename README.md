@@ -30,7 +30,7 @@ pip install twilio
 
 #### Your settings and message 
 
-Change lines 12-24 [autoautoreply.py](https://github.com/ee-gilbert/autoautoreply/blob/master/autoautoreply.py) to reflect your servers, tokens, accounts, etc. Update the actual message as well. For example: 
+Change lines 12-46 in [autoautoreply.py](https://github.com/ee-gilbert/autoautoreply/blob/master/autoautoreply.py) to reflect your servers, tokens, accounts, etc. Update the actual message as well. For example: 
 
 ```python
 imap_server = "imap.gmail.com" # if gmail
